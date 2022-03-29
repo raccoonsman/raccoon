@@ -1,0 +1,65 @@
+import discord
+from firebase_admin import credentials
+from firebase_admin import db
+import uuid
+import string
+
+
+
+def signup(ctx):
+  v = str(uuid.uuid4())
+  dir = db.reference(f"{ctx.author.id}")
+  dir.update({'ing' : 0})
+  dir.update({'대륙' : 1})
+  dir.update({'지갑' : v})
+  dir.update({'칭호' : '없음'})
+  dir.update({'최대스테미너' :100})
+  dir.update({'현재위치' : '태초마을'})
+  dir.update({'곡괭이 레벨' : 1})
+  dir.update({'돈' : 0})
+  dir.update({'강화최대돈' : 1000})
+  dir = db.reference(f"{ctx.author.id}/착용스킬")
+  dir.update({'스킬1' : '없음'})
+  dir.update({'스킬2' : '없음'})
+  dir.update({'스킬3' : '없음'})
+  dir = db.reference(f"{ctx.author.id}")
+  dir.update({'스킬보유' : ['응급처치']})
+  dir.update({'D스킬' : ['없음']})
+  dir.update({'스테미너' : 100})
+  dir.update({'최대경험치' : 300})
+  dir.update({'채굴력' : 10})
+  dir.update({'이동중' : 0})
+  dir.update({'레벨' : 1})
+  dir.update({'경험치' : 0})
+  dir.update({'탑승권' : 0})
+  dir = db.reference('user')
+  dir.push(f"{ctx.author.id}")
+  dir = db.reference(f"{ctx.author.id}/광물")
+  dir.update({'석탄' : 0})
+  dir.update({'철' : 0})
+  dir.update({'금' : 0})
+  dir.update({'청금석' : 0})
+  dir.update({'다이아' : 0})
+  dir.update({'에메랄드' : 0})
+  dir.update({'방해석' : 0})
+  dir.update({'휘석' : 0})
+  dir.update({'철광석' : 0})
+  dir.update({'석영' : 0})
+  dir.update({'오리할콘' : 0})
+  dir.update({'백운모' : 0})
+  dir.update({'흑운모' : 0})
+  dir.update({'각섬석' : 0})
+  dir.update({'인회석' : 0})
+  #신청
+  dir.update({'우라늄' : 0})
+  dir.update({'은' : 0})
+  dir.update({'구리' : 0})
+  dir.update({'수정' : 0})
+  dir.update({'사파이어' : 0})
+  dir.update({'황철석' : 0})
+  dir.update({'미스릴' : 0})
+  dir.update({'루비' : 0})
+  dir.update({'바이칼라 토밀린' : 0})
+  dir.update({'티타늄' : 0})
+  
+  
