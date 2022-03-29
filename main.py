@@ -57,9 +57,9 @@ status = cycle(["2챕 업데이트 완료!", "?도움말", f"도움말 갱신!",
 
 #접두사
 
-cred = credentials.Certificate('mistop-firebase-adminsdk-3l8go-a4b8f87d3d.json')
+cred = credentials.Certificate('파일명')
 firebase_admin.initialize_app(cred,{
-    'databaseURL' : 'https://mistop-default-rtdb.firebaseio.com/'
+    'databaseURL' : ''
 })
 #DB 연결
 
